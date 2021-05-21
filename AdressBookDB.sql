@@ -17,5 +17,10 @@ State varchar(100) not null,
 Zip varchar(100) not null,
 PhoneNumber int not null,
 Email varchar(50) not null
-) 
+)
+
+INSERT INTO AddressBook VALUES
+('MICHAEL','JACKSON','Street 123','LASVEGAS','US State','34561',98989898,'michaejohn@gmai.com')
+
+
 
