@@ -22,5 +22,19 @@ Email varchar(50) not null
 INSERT INTO AddressBook VALUES
 ('MICHAEL','JACKSON','Street 123','LASVEGAS','US State','34561',98989898,'michaejohn@gmai.com')
 
+INSERT INTO AddressBook VALUES
+('SAM','FIGHTER','Street 245','DETROIT','US State','45892',56565656,'samfighter@gmail.com')
+
+SELECT * FROM AddressBook
+
+UPDATE AddressBook
+SET City='WASHNGTON'
+WHERE FirstName='MICHAEL'
+
+UPDATE AddressBook
+SET City='TOKYO'
+WHERE FirstName='SAM'
+
+select * from AddressBook
 
 
