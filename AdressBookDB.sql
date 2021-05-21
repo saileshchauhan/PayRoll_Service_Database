@@ -37,4 +37,9 @@ WHERE FirstName='SAM'
 
 select * from AddressBook
 
+DELETE FROM AddressBook
+WHERE FirstName='sam' AND City='TOKYO'
+
+select * from AddressBook
+
 
