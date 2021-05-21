@@ -1,1 +1,1 @@
-# AdressBookDB using Microsoft Sequel Server Management Studio
+# AdressBookDB using Microsoft SQL Server Management Studio
