@@ -42,4 +42,15 @@ WHERE FirstName='sam' AND City='TOKYO'
 
 select * from AddressBook
 
+INSERT INTO AddressBook VALUES
+('SAM','MIKE','Street 245','DETROIT','US State','45892',56565656,'samfighter@gmail.com'),
+('SAROJ','DHARMA','Street 567','MADRID','US State','459692',85693235,'sarojdharma@gmail.com')
+
+Select FirstName from AddressBook
+WHERE City='DETROIT'
+
+select lastname from AddressBook
+where State='US STATE'
+
+
 
