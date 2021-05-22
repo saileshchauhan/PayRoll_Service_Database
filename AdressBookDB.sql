@@ -55,5 +55,10 @@ where State='US STATE'
 SELECT  COUNT(City)
 FROM AddressBook
 
+SELECT firstname from AddressBook
+WHERE city=('MADRID')
+ORDER BY FirstName
+
+
 
 
