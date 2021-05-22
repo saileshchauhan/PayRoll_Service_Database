@@ -52,5 +52,8 @@ WHERE City='DETROIT'
 select lastname from AddressBook
 where State='US STATE'
 
+SELECT  COUNT(City)
+FROM AddressBook
+
 
 
