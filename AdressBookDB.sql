@@ -71,3 +71,6 @@ Alter table AddressBook DROP COLUMN type,AdName
 Alter table AddressBook
 Add type varchar(100),AdNmae varchar(100)
 
+SELECT  COUNT(FirstName)
+FROM AddressBook
+
