@@ -22,3 +22,7 @@ INSERT INTO employee_payroll1 VALUES
 ('sandra',78000,'2019-03-02','F')
 
 SELECT * from employee_payroll1
+
+SELECT salary from employee_payroll1 where name='tom'
+
+SELECT * from employee_payroll1 where start between '2019-01-01' and GETDATE()
