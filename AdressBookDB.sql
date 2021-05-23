@@ -64,13 +64,25 @@ ADD Type varchar(100),AdName varchar(100)
 
 SELECT * FROM AddressBook
 
-INSERT INTO AddressBook(Type,AdName) VALUES('FRIEND','SCHOOL')
-
 Alter table AddressBook DROP COLUMN type,AdName
 
 Alter table AddressBook
 Add type varchar(100),AdNmae varchar(100)
 
-SELECT  COUNT(FirstName)
-FROM AddressBook
+UPDATE AddressBook
+SET type='FRIEND' WHERE Id=1
 
+UPDATE AddressBook
+SET type='OFFICE' WHERE Id=5
+
+ALTER table AddressBook
+drop column AdNmae
+
+Alter table AddressBook
+Add AddressBookName varchar(50)
+
+Update AddressBook
+set AddressBookName='important' where id=5
+
+SELECT  COUNT(type)
+FROM AddressBook
