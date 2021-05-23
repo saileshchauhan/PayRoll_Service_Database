@@ -36,3 +36,7 @@ set gender='M' where name in ('tom','sam','philip')
 SELECT SUM(salary) from employee_payroll1 where gender='f'
 Select SUM(salary) from employee_payroll1 group by gender
 Select SUM(salary) from employee_payroll1 where gender='m' group by gender
+Select MIN(salary) from employee_payroll1
+Select MIN(salary) from employee_payroll1 where gender='f'
+Select MAX(salary) from employee_payroll1 where gender='m'
+Select AVG(salary),gender from employee_payroll1 group by gender
