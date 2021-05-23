@@ -86,3 +86,6 @@ set AddressBookName='important' where id=5
 
 SELECT  COUNT(type)
 FROM AddressBook
+
+insert into AddressBook values
+('MICHAEL','JACKSON','Street 123','WASHINGTON','US State',456123,98562341,'michaejohn@gmail.com','FAMILY','normal')
