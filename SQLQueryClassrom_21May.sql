@@ -21,6 +21,4 @@ INSERT INTO employee_payroll1 VALUES
 ('sam',34569,'2017-05-23','M'),
 ('sandra',78000,'2019-03-02','F')
 
-
-
 SELECT * from employee_payroll1
