@@ -26,3 +26,9 @@ SELECT * from employee_payroll1
 SELECT salary from employee_payroll1 where name='tom'
 
 SELECT * from employee_payroll1 where start between '2019-01-01' and GETDATE()
+
+ALTER table employee_payroll1
+Add gender varchar(1)
+
+UPDATE employee_payroll1
+set gender='M' where name in ('tom','sam','philip')
