@@ -32,3 +32,7 @@ Add gender varchar(1)
 
 UPDATE employee_payroll1
 set gender='M' where name in ('tom','sam','philip')
+
+SELECT SUM(salary) from employee_payroll1 where gender='f'
+Select SUM(salary) from employee_payroll1 group by gender
+Select SUM(salary) from employee_payroll1 where gender='m' group by gender
