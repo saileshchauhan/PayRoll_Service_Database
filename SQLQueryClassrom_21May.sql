@@ -43,10 +43,6 @@ Select AVG(salary),gender from employee_payroll1 group by gender
 
 use PayRoll_Service13
 
-
-
-INSERT INTO employee_payroll1(name,salary,start,gender) VALUES
-('terissa',10000,'2015-01-01','F'),('terissa',10000,'2015-01-01','F')
 /*
 DECLARE @ConstraintName nvarchar(200)
 SELECT @ConstraintName = Name FROM SYS.DEFAULT_CONSTRAINTS WHERE PARENT_OBJECT_ID = OBJECT_ID('employee_payroll1') AND PARENT_COLUMN_ID = (SELECT column_id FROM sys.columns WHERE NAME = N'__ColumnName__' AND object_id = OBJECT_ID(N'__TableName__'))
@@ -82,6 +78,9 @@ CONSTRAINT DEFAULT_DEDUCTIONS DEFAULT 4000
 ALTER TABLE employee_payroll1
 ADD Net_Pay money not null
 CONSTRAINT DEFAULT_NETPAY DEFAULT 4000
+
+INSERT INTO employee_payroll1(name,salary,start,gender) VALUES
+('terissa',10000,'2015-01-01','F')
 
 
 
