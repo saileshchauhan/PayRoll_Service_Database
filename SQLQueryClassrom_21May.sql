@@ -43,7 +43,7 @@ Select AVG(salary),gender from employee_payroll1 group by gender
 
 use PayRoll_Service13
 
-SELECT * FROM employee_payroll1
+
 
 INSERT INTO employee_payroll1(name,salary,start,gender) VALUES
 ('terissa',10000,'2015-01-01','F'),('terissa',10000,'2015-01-01','F')
@@ -65,6 +65,25 @@ WITH VALUES
 ALTER TABLE employee_payroll1
 ADD Department varchar(100) not null
 CONSTRAINT DEFAULT_DEPARTMENT DEFAULT 'company'
+
+ALTER TABLE employee_payroll1
+ADD BasicPay money not null
+CONSTRAINT DEFAULT_BASICPAY DEFAULT (0) 
+
+SELECT * FROM employee_payroll1
+UPDATE employee_payroll1
+SET Net_Pay=6000
+WHERE Id in (1,2,3,4,5,6,7)
+
+ALTER TABLE employee_payroll1
+ADD Deductions money not null
+CONSTRAINT DEFAULT_DEDUCTIONS DEFAULT 4000
+
+ALTER TABLE employee_payroll1
+ADD Net_Pay money not null
+CONSTRAINT DEFAULT_NETPAY DEFAULT 4000
+
+
 
 
 
