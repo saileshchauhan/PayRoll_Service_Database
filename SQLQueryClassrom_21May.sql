@@ -52,7 +52,7 @@ IF EXISTS (SELECT * FROM syscolumns WHERE id=object_id('employee_payroll1') AND 
 EXEC('ALTER TABLE employee_payroll1 DROP COLUMN Adress')
 */
 
-/*ALTER TABLE employee_payroll1 DROP CONSTRAINT [DF__employee___Adres__34C8D9D1]*/
+ALTER TABLE employee_payroll1 DROP CONSTRAINT [DF__employee___Adres__34C8D9D1]
 ALTER TABLE employee_payroll1
 ADD Address varchar(250) null
 CONSTRAINT DEFAULT_ADRESS DEFAULT 'def_value'
@@ -81,6 +81,75 @@ CONSTRAINT DEFAULT_NETPAY DEFAULT 4000
 
 INSERT INTO employee_payroll1(name,salary,start,gender) VALUES
 ('terissa',10000,'2015-01-01','F')
+
+use PayRoll_Service13
+DROP table employee_payroll1
+									/*IMPLEMENTING E-R DIAGRAM*/
+
+CREATE TABLE EmpId_All_Details
+(
+Emp_Id int identity(1,1) primary key not null,
+name varchar(100) not null,
+salary money not null,
+start date not null,
+gender varchar(1) not null,
+Address varchar(250) not null,
+Department varchar(100) not null,
+Basic_Pay money not null,
+Deductions money not null,
+Net_Pay money not null,
+)
+Select * from EmpId_All_Details
+INSERT INTO EmpId_All_Details(name,salary,start,gender,Address,Basic_Pay,Deductions,Net_Pay) VALUES
+('Bill',15000,'2018-05-03','M','STR 100','SALES',15000,3000,12000),
+('TOM',17000,'2017-02-03','M','STR 104','OPERATION',17000,4000,13000),
+('SAM',14000,'2019-05-13','M','STR 179','MARKETING',14000,3000,11000),
+('SANDRA',19000,'2020-05-23','F','STR 07','SALES',19000,2000,17000),
+('MICKE',15000,'2018-05-03','M','STR 151','OPERATION',15000,3000,12000),
+('TERISSA',17000,'2021-07-23','F','STR 123','SALES',17000,3000,14000)
+
+DELETE FROM EmpId_All_Details where Emp_Id=7;
+ALTER table EmpId_All_Details
+DROP TABLE EmpId_DepartmentId
+
+CREATE TABLE EmpId_DepartmentId
+(
+empId int FOREIGN KEY REFERENCES EmpId_All_Details(Emp_Id),
+departmentId int FOREIGN KEY REFERENCES DepartmentId_Name(departmentId)
+)
+SELECT * FROM EmpId_DepartmentId
+
+INSERT INTO EmpId_DepartmentId VALUES
+('001'),('002'),('003'),('001'),('002'),('001') 
+
+CREATE TABLE DepartmentId_Name
+(
+departmentId int PRIMARY KEY identity(1,1) not null,
+departmentName varchar(100)
+)
+
+INSERT INTO DepartmentId_Name(departmentName) VALUES
+('SALES'),('OPERATION'),('MARKETING'),('HUMAN_RESOURCE')
+SELECT * FROM DepartmentId_Name
+
+use PayRoll_Service13
+
+ALTER TABLE EmpId_DepartmentId
+ADD FOREIGN KEY (empId) REFERENCES EmpId_Salary(empId)
+
+CREATE TABLE EmpId_Salary
+(
+empId int PRIMARY KEY not null,
+Basic_Pay money,
+Deductions money,
+Net_Pay money,
+Taxes money
+)
+Select * FROM EmpId_Salary
+
+
+
+
 
 
 
